@@ -54,7 +54,6 @@ void print()
         {
             cout<<" -> ";
         }
-
         current = current->next;
     }
 }

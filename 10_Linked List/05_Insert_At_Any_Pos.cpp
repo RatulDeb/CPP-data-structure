@@ -41,15 +41,19 @@ void insertAtAnyPos(int pos, int value){
     temp->data = value;
     temp->next = nullptr;
 
-    if( head == nullptr){
+    if( head == nullptr)
+    {
         head = tail = temp;
-    } if(pos == 1) {
+    } 
+    if(pos == 1) 
+    {
         insertAtHead(value);
         return;
     }
 
     Node* current = head;
-    for(int i=2; i<pos; i++) {
+    for(int i=2; i<pos; i++) 
+    {
         current = current->next;
     }
 
@@ -85,8 +89,8 @@ void insertAtTail(int x) {
 void print() {
     Node* current = head;
 
-    while( current != nullptr) {
-        cout<< current->data << endl;
+    while( current != nullptr) { 
+        cout<< current->data << " ";
         current = current->next;
     }
 }
