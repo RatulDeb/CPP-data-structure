@@ -14,7 +14,6 @@ Node* tail = new Node;
 
 int main()
 {
-//    Node* head = new Node;
    Node* second = new Node;
   
    
