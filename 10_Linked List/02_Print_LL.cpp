@@ -51,7 +51,11 @@ void print()
 
     while( current != nullptr )
     {
-        cout<< current->data << endl;
+        cout<< current->data;
+
+        if (current->next != NULL)
+            cout << " -> ";
+            
         current = current->next;
     }
 }

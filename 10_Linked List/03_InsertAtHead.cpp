@@ -34,7 +34,7 @@ int main()
 
     while( current != nullptr)
     {
-        cout<< current->data << endl;
+        cout<< current->data << "->";
         current = current->next;
     }
    
