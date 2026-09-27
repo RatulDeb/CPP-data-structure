@@ -210,15 +210,9 @@ void deleteAtPosition(int pos)
     }
 
     Node* current = head;
-    for (int i = 1; i < pos - 1 && current != nullptr; i++)
+    for (int i = 2; i < pos; i++)
     {
         current = current->next;
-    }
-
-    if (current == nullptr || current->next == nullptr)
-    {
-        cout << "Position is outside the list." << endl;
-        return;
     }
 
     Node* temp = current->next;
