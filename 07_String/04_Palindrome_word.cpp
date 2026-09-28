@@ -1,24 +1,20 @@
-#include <iostream>
-#include <string>
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-    string word;
-    cin >> word;
+int main()
+{
+    // cout<<"Enter word: ";
+    string s = "madam";
+    string rev = s;
+    
+    reverse(rev.begin(), rev.end());
 
-    bool palindrome = true;
-
-    for (int i = 0; i < word.length() / 2; i++) {
-        if (word[i] != word[word.length() - 1 - i]) {
-            palindrome = false;
-            break;
-        }
+    if(rev == s)
+    {
+        cout<<"palindrome";
     }
-
-    if (palindrome)
-        cout << "Palindrome";
     else
-        cout << "Not Palindrome";
-
-    return 0;
+    {
+        cout<<"Not palindrome";
+    }
 }
