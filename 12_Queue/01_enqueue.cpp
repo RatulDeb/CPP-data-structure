@@ -4,7 +4,8 @@ using namespace std;
 const int SIZE = 5;
 int q[SIZE];
 
-int front = -1, rear = -1;
+int front = -1;
+int rear = -1;
 
 void enqueue(int x)
 {
