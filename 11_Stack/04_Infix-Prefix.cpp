@@ -48,7 +48,9 @@ string InfixToPrefix(string infix)
         }
         else
         {
-            while (!st.empty() && precedence(c) <= precedence(st.top()))
+            while (!st.empty() && st.top() != ')' &&
+            (precedence(c) < precedence(st.top()) ||
+            (precedence(c) == precedence(st.top()) && c == '^')))
             {
                 prefix += st.top();
                 st.pop();
@@ -69,9 +71,14 @@ string InfixToPrefix(string infix)
 }
 int main()
 {
-    string infix = "a+b+c";
-    cout<<"Infix expression "<<infix<<endl;
-    cout<<"Prefix expression "<<InfixToPrefix(infix)<<endl;
+    while(true)
+    {
+        string infix;
+        cout<<"Enter the infix expression: ";
+        cin>>infix;
+        cout<<"Infix expression "<<infix<<endl;
+        cout<<"Prefix expression "<<InfixToPrefix(infix)<<endl;
+    }
 
     return 0;
 }
