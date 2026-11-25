@@ -13,7 +13,7 @@ int precedence(char op)
 }
 
 //Function to convert Infix to Postfix
-string infixToPostfix(string infix)
+string InfixToPostfix(string infix)
 {
     stack<char>st;
     string postfix = "";
@@ -46,7 +46,9 @@ string infixToPostfix(string infix)
         }
         else
         {
-            while(!st.empty() && precedence(c) <= precedence(st.top()))
+            while(!st.empty() && st.top() != '(' &&
+                  (precedence(c) < precedence(st.top()) ||
+                  (precedence(c) == precedence(st.top()) && c != '^')))
             {
                 postfix += st.top();
                 st.pop();
@@ -65,9 +67,14 @@ string infixToPostfix(string infix)
 
 int main()
 {
-    string infix = "(a+b*c/d)+e*f-g";
-    cout<<"Infix Expression"<<infix<<endl;
-    cout<<"Postfix Expression "<<infixToPostfix(infix)<<endl;
+    while(true)
+    {
+        string infix;
+        cout << "Enter the infix expression: ";
+        cin>>infix;
+        cout << "Infix expression " << infix << endl;
+        cout << "Postfix expression " << InfixToPostfix(infix) << endl;
+    }
 
     return 0;
 }
